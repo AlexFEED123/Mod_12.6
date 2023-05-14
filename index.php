@@ -2,276 +2,281 @@
 <html lang="ru">
    <head>
          <meta charset="utf-8">
-         <title>сравнения</title>  
-          <link href="style.css" rel="stylesheet"> 
+         <title>MOD_12.6</title>  
    </head>
      <body>
-        <table align="center" border ="2">
-            <caption>Таблица истиности PHP</caption>
-  <tbody>
-    <tr>
-      <th>A</th>
-      <th>B</th>
-      <th>!A</th>
-      <th>A||B</th>
-      <th>A&&B</th>
-      <th>A xor B</th>
-    </tr>
-    <tr>
-      <td><?php $a = 0; print $a;?></td>
-      <td><?php $b = 0; print $b;?></td>
-      <td><?php var_export(!$a);?></td>
-      <td><?php var_export($a || $b);?></td>
-      <td><?php var_export($a && $b);?></td>
-      <td><?php var_export($a xor $b);?></td>
-    </tr>
-    <tr>
-      <td><?php $a = 0; var_export($a);?></td>
-      <td><?php $b = 1; var_export($b);?></td>
-      <td><?php var_export(!$a);?></td>
-      <td><?php var_export($a || $b);?></td>
-      <td><?php var_export($a && $b);?></td>
-      <td><?php var_export($a xor $b);?></td>
-    </tr>
-    <tr>
-      <td><?php $a = 1; var_export($a);?></td>
-      <td><?php $b = 0; var_export($b);?></td>
-      <td><?php var_export(!$a);?></td>
-      <td><?php var_export($a || $b);?></td>
-      <td><?php var_export($a && $b);?></td>
-      <td><?php var_export($a xor $b);?></td>
-    </tr>
-    <tr>
-      <td><?php $a = 1; var_export($a);?></td>
-      <td><?php $b = 1; var_export($b);?></td>
-      <td><?php var_export(!$a);?></td>
-      <td><?php var_export($a || $b);?></td>
-      <td><?php var_export($a && $b);?></td>
-      <td><?php var_export($a xor $b);?></td>
-    </tr>
-  </tbody>
-</table>
-<hr>
- <table align="center" border ="2" id="easy">
-            <caption>Таблица гибкого сравнения</caption>
-  <tbody>
-    <tr>
-      <th></th>
-      <th><?php $t = true; var_export($t);?></th>
-      <th><?php $f = false; var_export($f);?></th>
-      <th><?php $one = 1; var_export($one);?></th>
-      <th><?php $zero = 0; var_export($zero);?></th>
-      <th><?php $unOne = -1; var_export($unOne);?></th>
-      <th><?php $stOne = "1"; var_export($stOne);?></th>
-      <th><?php $preNull = null; var_export($preNull);?></th>
-      <th><?php $stPhp = "php"; var_export($stPhp);?></th>
-    </tr>
-    <tr>
-      <th><?php $t1 = true; var_export($t1);?></th>
-      <td class="t"><?php var_export($t == $t1)?></td>
-      <td><?php var_export($t1 == $f);?></td>
-      <td class="t"><?php var_export($t1 == $one);?></td>
-      <td><?php var_export($t1 == $zero);?></td>
-      <td class="t"><?php var_export($t1 == $unOne);?></td>
-      <td class="t"><?php var_export($t1 == $stOne);?></td>
-      <td><?php var_export($t1 == $preNull);?></td>
-      <td class="t"><?php var_export($t1 == $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $f1 = false; var_export($f1);?></th>
-      <td><?php var_export($f1 == $t);?></td>
-      <td class="t"><?php var_export($f1 == $f);?></td>
-      <td><?php var_export($f1 == $one);?></td>
-      <td class="t"><?php var_export($f1 == $zero);?></td>
-      <td><?php var_export($f1 == $unOne);?></td>
-      <td><?php var_export($f1 == $stOne);?></td>
-      <td class="t"><?php var_export($f1 == $preNull);?></td>
-      <td><?php var_export($f1 == $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $one1 = 1; var_export($one1);?></th>
-      <td class="t"><?php var_export($one1 == $t);?></td>
-      <td><?php var_export($one1 == $f);?></td>
-      <td class="t"><?php var_export($one1 == $one);?></td>
-      <td><?php var_export($one1 == $zero);?></td>
-      <td><?php var_export($one1 == $unOne);?></td>
-      <td class="t"><?php var_export($one1 == $stOne);?></td>
-      <td><?php var_export($one1 == $preNull);?></td>
-      <td><?php var_export($one1 == $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $zero1 = 0; var_export($zero1);?></th>
-      <td><?php var_export($zero1 == $t);?></td>
-      <td class="t"><?php var_export($zero1 == $f);?></td>
-      <td><?php var_export($zero1 == $one);?></td>
-      <td class="t"><?php var_export($zero1 == $zero);?></td>
-      <td><?php var_export($zero1 == $unOne);?></td>
-      <td><?php var_export($zero1 == $stOne);?></td>
-      <td class="t"><?php var_export($zero1 == $preNull);?></td>
-      <td><?php var_export($zero1 == $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $unOne1 = -1; var_export($unOne1);?></th>
-      <td class="t"><?php var_export($unOne1 == $t);?></td>
-      <td><?php var_export($unOne1 == $f);?></td>
-      <td><?php var_export($unOne1 == $one);?></td>
-      <td><?php var_export($unOne1 == $zero);?></td>
-      <td class="t"><?php var_export($unOne1 == $unOne);?></td>
-      <td><?php var_export($unOne1 == $stOne);?></td>
-      <td><?php var_export($unOne1 == $preNull);?></td>
-      <td><?php var_export($unOne1 == $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $stOne1 = "1";  var_export($stOne1);?></th>
-      <td class="t"><?php var_export($stOne1 == $t);?></td>
-      <td><?php var_export($stOne1 == $f);?></td>
-      <td class="t"><?php var_export($stOne1 == $one);?></td>
-      <td><?php var_export($stOne1 == $zero);?></td>
-      <td><?php var_export($stOne1 == $unOne);?></td>
-      <td class="t"><?php var_export($stOne1 == $stOne);?></td>
-      <td><?php var_export($stOne1 == $preNull);?></td>
-      <td><?php var_export($stOne1 == $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $preNull1 = null;  var_export($preNull1);?></th>
-      <td><?php var_export($preNull1 == $t);?></td>
-      <td class="t"><?php var_export($preNull1 == $f);?></td>
-      <td><?php var_export($preNull1 == $one);?></td>
-      <td class="t"><?php var_export($preNull1 == $zero);?></td>
-      <td><?php var_export($preNull1 == $unOne);?></td>
-      <td><?php var_export($preNull1 == $stOne);?></td>
-      <td class="t"><?php var_export($preNull1 == $preNull);?></td>
-      <td><?php var_export($preNull1 == $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $stPhp1 = 'php'; var_export($stPhp1);?></th>
-      <td class="t"><?php var_export($stPhp1 == $t);?></td>
-      <td><?php var_export($stPhp1 == $f);?></td>
-      <td><?php var_export($stPhp1 == $one);?></td>
-      <td class="t"><?php var_export($stPhp1 == $zero);?></td>
-      <td><?php var_export($stPhp1 == $unOne);?></td>
-      <td><?php var_export($stPhp1 == $stOne);?></td>
-      <td><?php var_export($stPhp1 == $preNull);?></td>
-      <td class="t"><?php var_export($stPhp1 == $stPhp);?></td>
-    </tr>
-  </tbody>
-</table>
+        <?php
+        $example_persons_array = [
+    [
+        'fullname' => 'Иванов Иван Иванович',
+        'job' => 'tester',
+    ],
+    [
+        'fullname' => 'Степанова Наталья Степановна',
+        'job' => 'frontend-developer',
+    ],
+    [
+        'fullname' => 'Пащенко Владимир Александрович',
+        'job' => 'analyst',
+    ],
+    [
+        'fullname' => 'Громов Александр Иванович',
+        'job' => 'fullstack-developer',
+    ],
+    [
+        'fullname' => 'Славин Семён Сергеевич',
+        'job' => 'analyst',
+    ],
+    [
+        'fullname' => 'Цой Владимир Антонович',
+        'job' => 'frontend-developer',
+    ],
+    [
+        'fullname' => 'Быстрая Юлия Сергеевна',
+        'job' => 'PR-manager',
+    ],
+    [
+        'fullname' => 'Шматко Антонина Сергеевна',
+        'job' => 'HR-manager',
+    ],
+    [
+        'fullname' => 'аль-Хорезми Мухаммад ибн-Муса',
+        'job' => 'analyst',
+    ],
+    [
+        'fullname' => 'Бардо Жаклин Фёдоровна',
+        'job' => 'android-developer',
+    ],
+    [
+        'fullname' => 'Шварцнегер Арнольд Густавович',
+        'job' => 'babysitter',
+    ],
+];
 
-<div>
-          <p>
-            В  PHP при сравнении строк, содержащих числа, оператор == пытается преобразовать их в числа<br>
-            При нестрогом сравнении, например, строки с числом, строка приводится к числу (int) со значением равным 0<br>
-            При строгом сравнении оператор вернет true, только если оба операнда имеют одинаковый тип и одно и то же значение<br>
-            Если сравнить bool или null с чем угодно оба операнда преобразуются в bool, FALSE < TRUE<br>
-            При сравнении null или string с string NULL преобразуется в «», числовое или лексическое сравнение <br>
+$partName = [
+  'surname',
+  'name',
+  'patronomyc',
+];
 
-          </p>
-       </div>
 
-<table align="center" border ="2" id="hard">
-            <caption>Таблица жёсткого сравнения</caption>
-  <tbody>
-    <tr>
-      <th></th>
-      <th><?php $t = true; var_export($t);?></th>
-      <th><?php $f = false; var_export($f);?></th>
-      <th><?php $one = 1; var_export($one);?></th>
-      <th><?php $zero = 0; var_export($zero);?></th>
-      <th><?php $unOne = -1; var_export($unOne);?></th>
-      <th><?php $stOne = "1"; var_export($stOne);?></th>
-      <th><?php $preNull = null; var_export($preNull);?></th>
-      <th><?php $stPhp = "php"; var_export($stPhp);?></th>
-    </tr>
-    <tr>
-      <th><?php $t1 = true; var_export($t1);?></th>
-      <td class="t"><?php var_export($t === $t1)?></td>
-      <td><?php var_export($t1 === $f);?></td>
-      <td><?php var_export($t1 === $one);?></td>
-      <td><?php var_export($t1 === $zero);?></td>
-      <td><?php var_export($t1 === $unOne);?></td>
-      <td><?php var_export($t1 === $stOne);?></td>
-      <td><?php var_export($t1 === $preNull);?></td>
-      <td><?php var_export($t1 === $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $f1 = false; var_export($f1);?></th>
-      <td><?php var_export($f1 === $t);?></td>
-      <td class="t"><?php var_export($f1 === $f);?></td>
-      <td><?php var_export($f1 === $one);?></td>
-      <td><?php var_export($f1 === $zero);?></td>
-      <td><?php var_export($f1 === $unOne);?></td>
-      <td><?php var_export($f1 === $stOne);?></td>
-      <td><?php var_export($f1 === $preNull);?></td>
-      <td><?php var_export($f1 === $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $one1 = 1; var_export($one1);?></th>
-      <td><?php var_export($one1 === $t);?></td>
-      <td><?php var_export($one1 === $f);?></td>
-      <td class="t"><?php var_export($one1 === $one);?></td>
-      <td><?php var_export($one1 === $zero);?></td>
-      <td><?php var_export($one1 === $unOne);?></td>
-      <td><?php var_export($one1 === $stOne);?></td>
-      <td><?php var_export($one1 === $preNull);?></td>
-      <td><?php var_export($one1 === $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $zero1 = 0; var_export($zero1);?></th>
-      <td><?php var_export($zero1 === $t);?></td>
-      <td><?php var_export($zero1 === $f);?></td>
-      <td><?php var_export($zero1 === $one);?></td>
-      <td class="t"><?php var_export($zero1 === $zero);?></td>
-      <td><?php var_export($zero1 === $unOne);?></td>
-      <td><?php var_export($zero1 === $stOne);?></td>
-      <td><?php var_export($zero1 === $preNull);?></td>
-      <td><?php var_export($zero1 === $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $unOne1 = -1; var_export($unOne1);?></th>
-      <td><?php var_export($unOne1 === $t);?></td>
-      <td><?php var_export($unOne1 === $f);?></td>
-      <td><?php var_export($unOne1 === $one);?></td>
-      <td><?php var_export($unOne1 === $zero);?></td>
-      <td class="t"><?php var_export($unOne1 === $unOne);?></td>
-      <td><?php var_export($unOne1 === $stOne);?></td>
-      <td><?php var_export($unOne1 === $preNull);?></td>
-      <td><?php var_export($unOne1 === $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $stOne1 = "1";  var_export($stOne1);?></th>
-      <td><?php var_export($stOne1 === $t);?></td>
-      <td><?php var_export($stOne1 === $f);?></td>
-      <td><?php var_export($stOne1 === $one);?></td>
-      <td><?php var_export($stOne1 === $zero);?></td>
-      <td><?php var_export($stOne1 === $unOne);?></td>
-      <td class="t"><?php var_export($stOne1 === $stOne);?></td>
-      <td><?php var_export($stOne1 === $preNull);?></td>
-      <td><?php var_export($stOne1 === $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $preNull1 = null;  var_export($preNull1);?></th>
-      <td><?php var_export($preNull1 === $t);?></td>
-      <td><?php var_export($preNull1 === $f);?></td>
-      <td><?php var_export($preNull1 === $one);?></td>
-      <td><?php var_export($preNull1 === $zero);?></td>
-      <td><?php var_export($preNull1 === $unOne);?></td>
-      <td><?php var_export($preNull1 === $stOne);?></td>
-      <td class="t"><?php var_export($preNull1 === $preNull);?></td>
-      <td><?php var_export($preNull1 === $stPhp);?></td>
-    </tr>
-    <tr>
-      <th><?php $stPhp1 = 'php'; var_export($stPhp1);?></th>
-      <td><?php var_export($stPhp1 === $t);?></td>
-      <td><?php var_export($stPhp1 === $f);?></td>
-      <td><?php var_export($stPhp1 === $one);?></td>
-      <td><?php var_export($stPhp1 === $zero);?></td>
-      <td><?php var_export($stPhp1 === $unOne);?></td>
-      <td><?php var_export($stPhp1 === $stOne);?></td>
-      <td><?php var_export($stPhp1 === $preNull);?></td>
-      <td class="t"><?php var_export($stPhp1 === $stPhp);?></td>
-    </tr>
-  </tbody>
-</table>
-<hr>
+
+function getFullnameFromParts(){
+  echo "Задание-1";
+  echo "<ul>";
+  global $example_persons_array;
+  $leight = count($example_persons_array);
+  for ($i =0; $i<$leight; $i++){
+  $fullName = $example_persons_array[$i]['fullname'].';';
+  echo "<li>";
+  print $fullName;
+  echo "</li>";
+  };
+  echo "</ul>";
+};
+getFullnameFromParts();
+
+//Я туплю или банально не знаю, но я не смог додуматься как обратиться к функции в другой функции.
+// И так будет во всех последующих функциях, я буду вствлять тело нужной функции в новую функцию. (надеюсь вы разъясните мне позже :))
+
+function getPartsFromFullname(){
+  echo "Задание-2";
+  echo "<ul>";
+  global $example_persons_array;
+  global $partName;
+  $leight = count($example_persons_array);
+  for ($i =0; $i<$leight; $i++){
+    $string = $example_persons_array[$i]['fullname'].';';
+   $arr = explode(' ',$string);
+   $result = array_combine($partName,$arr);
+   echo "<li>";
+   var_export($result);
+   echo "</li>";
+  };
+  echo "</ul>";
+ };
+
+ getPartsFromFullname();
+ global $fullName;
+
+ function getShortName (){
+  echo "Задание-3";
+  echo "<ul>";
+  global $example_persons_array;
+  global $partName;
+  $leight = count($example_persons_array);
+  for ($i =0; $i<$leight; $i++){
+    $string = $example_persons_array[$i]['fullname'].';';
+   $arr = explode(' ',$string);
+   $result = array_combine($partName,$arr);
+   $shortPerson = $result['name'].' '.mb_substr($result['surname'],0,1).'.';
+   echo "<li>";
+   var_export($shortPerson);
+   echo "</li>";
+  };
+  echo "</ul>";
+ };
+
+ getShortName();
+
+ function getGenderFromName(){
+  echo "Задание-4";
+  global $example_persons_array;
+  global $gR;
+  $gR = 0;
+  $leight = count($example_persons_array);
+  for ($i =0; $i<$leight; $i++){
+  $fullName = $example_persons_array[$i]['fullname'].';';
+
+  $femalSurName = mb_strpos($fullName,'вна');
+  if ($femalSurName > 4 ){
+    $femalSurName = -1;
+  } else{
+    $femalSurName = 0;
+  };
+
+  $femalName = mb_strpos($fullName,'а');
+  if ($femalName >4){
+    $femalName = -1;
+  } else{
+    $femalName = 0;
+  };
+
+  $femalFamily = mb_strpos($fullName,'ва');
+  if ($femalFamily > 4 ){
+    $femalFamily = -1;
+  } else{
+    $femalFamily = 0;
+  };
+
+  $manFamily = mb_strpos($fullName,'в');
+  if ($manFamily > 4 ){
+    $manFamily = 1;
+  } else{
+    $manFamily = 0;
+  }; 
+
+  $manName = mb_strpos($fullName,'й'||'н');
+  if ($manName > 4 ){
+    $manFamily = 1;
+  } else{
+    $manName = 0;
+  };
+
+  $manSurname = mb_strpos($fullName,'ич');
+  if ($manSurname > 4 ){
+    $manSurname = 1;
+  } else{
+    $manSurname = 0;
+  };
+  $personResult = $femalSurName + $femalName + $femalFamily + $manFamily + $manName + $manSurname;
+
+  if ($personResult >=1 ){
+    $gender ='Мужской пол';
+  } elseif ($personResult <0){
+    $gender = ' Женский пол';
+  }else{
+    $gender = 'Пол не определён';
+  };
+
+echo "<ul>";
+echo "<li>";
+var_export($gender);
+echo "</li>";
+echo "</ul>";
+
+ };
+ };
+ getGenderFromName();
+
+ $examplePersonsArray = [
+  [
+      'fullname' => 'Иванов Иван Иванович',
+      'gender' => 'мужской пол',
+  ],
+  [
+      'fullname' => 'Степанова Наталья Степановна',
+      'gender' => 'женский пол',
+  ],
+  [
+      'fullname' => 'Пащенко Владимир Александрович',
+      'gender' => 'мужской пол',
+  ],
+  [
+      'fullname' => 'Громов Александр Иванович',
+      'gender' => 'мужской пол',
+  ],
+  [
+      'fullname' => 'Славин Семён Сергеевич',
+      'gender' => 'мужской пол',
+  ],
+  [
+      'fullname' => 'Цой Владимир Антонович',
+      'gender' => 'мужской пол',
+  ],
+  [
+      'fullname' => 'Быстрая Юлия Сергеевна',
+      'gender' => 'женский пол',
+  ],
+  [
+      'fullname' => 'Шматко Антонина Сергеевна',
+      'gender' => 'женский пол',
+  ],
+  [
+      'fullname' => 'аль-Хорезми Мухаммад ибн-Муса',
+      'gender' => 'мужской пол',
+  ],
+  [
+      'fullname' => 'Бардо Жаклин Фёдоровна',
+      'gender' => 'женский пол',
+  ],
+  [
+      'fullname' => 'Шварцнегер Арнольд Густавович',
+      'gender' => 'мужской пол',
+  ],
+];
+function getGenderDescription(){
+  echo "Задание-5";
+  global $examplePersonsArray;
+  $maxQuantiti = count($examplePersonsArray);
+   global $man;
+    global $woman;
+    global $non;
+    $man = 0;
+    $woman = 0;
+    $non = 0;
+  for ($i =0; $i<$maxQuantiti; $i++){
+    $difinitionGender = $examplePersonsArray[$i]['gender'];
+    if($difinitionGender ==='мужской пол'){
+      $man++;
+    }elseif($difinitionGender ==='женский пол'){
+      $woman++;
+    }else{
+      $non++;
+    };
+  };
+  $manPercent = round((100/$maxQuantiti)*$man);
+  $womanPercent = round((100/$maxQuantiti)*$woman);
+  $nonPercent = floor((100/$maxQuantiti)*$non);
+  echo "<ul>";
+  echo "<li>";
+  echo "Гендерный состав аудитории:";
+echo "</li>";
+echo "<li>";
+  echo "---------------------------";
+echo "</li>";
+echo "<li>";
+  echo "Мужчины -"." ".$manPercent."%";
+echo "</li>";
+echo "<li>";
+  echo "Женщины -"." ".$womanPercent."%";
+echo "</li>";
+echo "<li>";
+  echo "Не удалось определить -"." ".$nonPercent."%";
+echo "</li>";
+echo "</ul>";
+};
+getGenderDescription();
+?>
     </body>
 </html>
